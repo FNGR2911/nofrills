@@ -1,0 +1,12 @@
+name: nofrills
+type: theme
+description:  Clean starter theme with nofrills for D8
+core: 8.x
+base theme: classy
+libraries:
+  - nofrills/global-styling
+regions:
+  header: Header
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
