@@ -1,3 +1,22 @@
-html, body {
-  background: white;
-}
+// Import external vendors
+@import "vendors/normalize";
+
+// Import internal utils
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/placeholders";
+
+// Import base styles
+@import "base/base";
+@import "base/layout";
+
+// Import components
+// ...
+
+
+// Import drupal specific
+// Nodes
+// ...
+
+// Views
+// ...
