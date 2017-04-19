@@ -1,0 +1,50 @@
+// FRONTEND ADMIN STYLES
+// Admin Toolbar
+#toolbar-administration {
+  a {
+    text-decoration: none;
+  }
+
+  .toolbar-tray-horizontal {
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 1px 3px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .toolbar-tray-horizontal .toolbar-menu-administration .toolbar-menu .toolbar-menu {
+    box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Admin Tabs
+nav.tabs {
+  ul.tabs.primary {
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    align-items: flex-end;
+
+    li {
+      margin-right: 1px;
+      flex: 1;
+      text-align: center;
+      max-width: 150px;
+
+      a {
+        color: rgba(0, 0, 0, .35);
+        line-height: 100%;
+        border-radius: 5px 5px 0 0;
+        text-transform: uppercase;
+        font-size: 12px;
+        padding: 8px;
+        border: none;
+
+        &.is-active,
+        &:hover {
+          background: transparent;
+          color: rgba(0, 0, 0, .55);
+          border-bottom: 2px solid rgba(0, 0, 0, .35);
+          transform: translateY(1px);
+        }
+      }
+    }
+  }
+}

@@ -9,6 +9,7 @@ const notify = require("gulp-notify");
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 
@@ -24,9 +25,10 @@ gulp.task('images', function() {
 // Compile and autoprefix Sass
 gulp.task('sass', function() {
   return gulp.src('src/scss/**/*.scss')
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-				.pipe(autoprefixer('last 5 versions'))
-        .pipe(notify("💥 Sass compiled!"))
+				.pipe(sourcemaps.init())
+        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+				.pipe(sourcemaps.write())
+        .pipe(notify("💥 Development SASS compiled!"))
         .pipe(gulp.dest('css'));
 });
 
@@ -50,3 +52,13 @@ gulp.task('watch', function() {
 
 // Default Task
 gulp.task('default', ['images', 'sass', 'scripts']);
+
+// Production Task
+gulp.task('prod', ['images', 'scripts'], function() {
+	// SASS Production Task
+	return gulp.src('src/scss/**/*.scss')
+				.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+				.pipe(autoprefixer('last 5 versions'))
+				.pipe(notify("💥 SASS compiled!"))
+				.pipe(gulp.dest('css'));
+})

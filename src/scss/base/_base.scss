@@ -1,0 +1,74 @@
+// Basics
+* {
+  outline: none;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  // ...
+}
+
+html {
+  font-size: 87.5%;
+}
+
+body {
+  font-size: 14px; font-size: 1rem; line-height: 1;
+  font-family: Arial, sans-serif;
+  color: black;
+}
+
+// Headlines
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, serif;
+  font-weight: 400;
+  line-height: 150%;
+  text-transform: uppercase;
+  margin: 0 0 1em 0;
+}
+
+h1 {
+  // ...
+}
+
+h2 {
+  // ...
+}
+
+h3 {
+  // ...
+}
+
+h4 {
+  // ...
+}
+
+// Links
+a {
+  // ...
+
+  &:visited {
+    // ...
+  }
+
+  &:hover {
+    // ...
+  }
+}
+
+// Text & Images
+p {
+  line-height: 150%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Lists
+ul, ol {
+  line-height: 150%;
+}
