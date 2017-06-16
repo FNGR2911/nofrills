@@ -53,8 +53,8 @@ gulp.task('watch', function() {
 // Default Task
 gulp.task('default', ['images', 'sass', 'scripts']);
 
-// Production Task
-gulp.task('prod', ['images', 'scripts'], function() {
+// Build Task
+gulp.task('build', ['images', 'scripts'], function() {
 	// SASS Production Task
 	return gulp.src('src/scss/**/*.scss')
 				.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
