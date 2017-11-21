@@ -16,12 +16,11 @@ html {
 }
 
 body {
+  font-family: $typo-family-body;
   font-size: 14px;
   font-size: 1rem;
   line-height: 1;
-  font-family: Arial, sans-serif;
   color: black;
-  font-family: $typo-family-body;
 }
 
 // Headlines
@@ -31,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Arial, serif;
+  font-family: $typo-family-headline;
   font-weight: 400;
   line-height: 150%;
   text-transform: uppercase;
