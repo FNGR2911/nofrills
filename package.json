@@ -23,7 +23,5 @@
     "gulp-uglify": "^1.5.3",
     "susy": "^2.2.12"
   },
-  "dependencies": {
-    "flickity": "^2.0.5"
-  }
+  "dependencies": {}
 }
