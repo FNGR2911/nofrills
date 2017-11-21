@@ -6,7 +6,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
   // ...
 }
 
@@ -15,13 +16,21 @@ html {
 }
 
 body {
-  font-size: 14px; font-size: 1rem; line-height: 1;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 1;
   font-family: Arial, sans-serif;
   color: black;
+  font-family: $typo-family-body;
 }
 
 // Headlines
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: Arial, serif;
   font-weight: 400;
   line-height: 150%;
@@ -69,6 +78,7 @@ img {
 }
 
 // Lists
-ul, ol {
+ul,
+ol {
   line-height: 150%;
 }
