@@ -1,17 +1,35 @@
 // Basic Rows
-.row {
+.section {
   width: 100%;
   max-width: 1210px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 0;
+  padding: 0;
 
-  @include breakpoint('s') {
-    padding: 0 40px;
-    max-width: 1250px;
+  &__row {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
   }
 
-  // Debugging
-  // * {
-  //   border: 1px solid gold;
-  // }
+  &__columns {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__column {
+  }
+}
+
+// Debugging
+.section {
+  border: 1px solid gold;
+
+  &__row {
+    border: 1px solid green;
+  }
+
+  &__column {
+    border: 1px solid red;
+  }
 }
