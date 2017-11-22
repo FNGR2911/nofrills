@@ -10,3 +10,4 @@ regions:
   content: Content
   sidebar: Sidebar
   footer: Footer
+  hidden: Hidden
