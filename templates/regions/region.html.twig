@@ -14,12 +14,14 @@
 #}
 {%
   set classes = [
-    'region',
-    'region-' ~ region|clean_class,
+    'section__row',
+    'section__row--' ~ region|clean_class,
   ]
 %}
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
-    {{ content }}
+    <div class="section__columns">
+      {{ content }}
+    </div>
   </div>
 {% endif %}
