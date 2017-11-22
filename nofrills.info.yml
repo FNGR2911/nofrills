@@ -8,6 +8,6 @@ libraries:
 regions:
   header: Header
   content: Content
-  sidebar: Sidebar
+  boilerplate: Boilerplate
   footer: Footer
   hidden: Hidden
