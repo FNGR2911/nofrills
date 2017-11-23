@@ -31,20 +31,67 @@ nav.tabs {
       max-width: 170px;
 
       a {
-        color: rgba(0, 0, 0, .35);
+        color: rgba(0, 0, 0, 0.35);
         line-height: 100%;
         border-radius: 3px;
         text-transform: uppercase;
         font-size: 12px;
         padding: 8px;
-        transition: all .2s ease-in-out;
+        transition: all 0.2s ease-in-out;
         white-space: nowrap;
 
         &.is-active,
         &:hover {
           background-color: white;
-          color: rgba(0, 0, 0, .55);
+          color: rgba(0, 0, 0, 0.55);
         }
+      }
+    }
+  }
+}
+
+// Login & password form
+.user-login-form,
+.user-pass {
+  max-width: 500px;
+
+  p {
+    margin-top: 0;
+    font-size: $typo-size-small;
+  }
+
+  .form-item {
+    display: flex;
+    flex-direction: column;
+
+    .description {
+      color: $color-gray;
+      margin-top: 5px;
+    }
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    input[type='text'],
+    input[type='password'] {
+      border: 1px solid $color-gray;
+      padding: 8px;
+    }
+  }
+
+  .form-actions {
+    .button {
+      border: 0;
+      background-color: $color-gray-dark;
+      color: white;
+      padding: 8px 16px;
+      line-height: 100%;
+      border-radius: 0;
+
+      &:hover,
+      &:active {
+        background-color: $color-primary;
       }
     }
   }
