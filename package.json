@@ -1,26 +1,35 @@
 {
-  "name": "theme",
-  "version": "0.1.0",
-  "description": "Basic drupal theme package json",
+  "name": "nofrills",
+  "version": "1.1.0",
+  "description": "nofrills drupal theme package json",
   "main": "index.html",
-  "private": true,
   "scripts": {
-    "dev": "gulp watch",
-    "build": "gulp build"
+    "dev": "rm -rf dist && gulp build && gulp watch --prod=false",
+    "build": "rm -rf dist && gulp build --prod=true"
   },
-  "author": "Matthias Fänger",
+  "author": "Matthias Fänger <matthias.faenger@muuuh.de> (https://www.muuuh.de/)",
+  "engines": {
+    "node": ">=10.7.0",
+    "npm": ">=6.4.0"
+  },
   "devDependencies": {
-    "babel-preset-es2015": "^6.18.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-babel": "^6.1.2",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.3.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.1"
+    "gulp-uglify": "^3.0.0",
+    "yargs": "^12.0.2"
   },
   "dependencies": {}
 }

@@ -2,6 +2,6 @@ global-styling:
   version: 1.x
   css:
     theme:
-      css/main.css: {}
+      assets/css/main.css: {}
   js:
-    js/main.js: {}
+    assets/js/main.js: {}

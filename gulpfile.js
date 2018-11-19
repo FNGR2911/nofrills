@@ -1,69 +1,73 @@
-// Include gulp
 const gulp = require('gulp')
-
-// Include Our Plugins
 const sass = require('gulp-sass')
-const uglify = require('gulp-uglify')
+const autoprefixer = require('gulp-autoprefixer')
 const notify = require('gulp-notify')
 const imagemin = require('gulp-imagemin')
 const newer = require('gulp-newer')
-const autoprefixer = require('gulp-autoprefixer')
+const babel = require('gulp-babel')
 const sourcemaps = require('gulp-sourcemaps')
 const concat = require('gulp-concat')
-const babel = require('gulp-babel')
+const uglify = require('gulp-uglify')
+const argv = require('yargs').argv
+const gulpif = require('gulp-if')
 
-// Image optimization
+/**
+ * Set environment variables
+ */
+const development = argv.prod == 'false' ? true : false
+const production = argv.prod == 'true' ? true : false
+
+/**
+ * Set variables for root, style, script and image files
+ */
+const styles = [`src/scss/**/*.scss`]
+const scripts = [`src/js/main.js`]
+const images = [`src/images/**/*`]
+
+/**
+ * Copy and optimize images
+ */
 gulp.task('images', () => {
   return gulp
-    .src('src/images/**/*')
-    .pipe(newer('images'))
+    .src(images)
+    .pipe(newer(`assets/images`))
     .pipe(imagemin())
-    .pipe(gulp.dest('images'))
-    .pipe(notify({ message: '💥 Images minified!', onLast: true }))
+    .pipe(gulp.dest(`assets/images`))
+    .pipe(notify({ message: '💥  Images optimized and copied', onLast: true }))
 })
 
-// Compile and autoprefix Sass
-gulp.task('sass', () => {
-  return gulp
-    .src('src/scss/**/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('css'))
-    .pipe(notify({ message: '💥 Development SASS compiled!', onLast: true }))
-})
-
-// Uglify & Babelify my JS
+/**
+ * Babelify, concat and uglify JavaScirpt
+ */
 gulp.task('scripts', () => {
   return gulp
-    .src('src/js/*.js')
-    .pipe(
-      babel({
-        presets: ['es2015']
-      })
-    )
-    .pipe(uglify())
-    .pipe(gulp.dest('js'))
-    .pipe(notify({ message: '💥 Scripts uglified and minified!', onLast: true }))
+    .src(scripts)
+    .pipe(babel())
+    .pipe(concat('main.js'))
+    .pipe(uglify({ mangle: { reserved: ['EXAMPLE'] } }))
+    .pipe(gulp.dest(`assets/js`))
+    .pipe(notify({ message: '💥  JavaScript babelified, concatenated and uglified', onLast: true }))
 })
 
-// Watch Files For Changes
-gulp.task('watch', () => {
-  gulp.watch('src/js/*.js', ['scripts'])
-  gulp.watch('src/scss/**/*.scss', ['sass'])
-  gulp.watch('src/images/**/*', ['images'])
-})
-
-// Default Task
-gulp.task('default', ['images', 'sass', 'scripts'])
-
-// Build Task
-gulp.task('build', ['images', 'scripts'], function() {
-  // SASS Production Task
+/**
+ * Complile Sass
+ */
+gulp.task('styles', () => {
   return gulp
-    .src('src/scss/**/*.scss')
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .src(styles)
+    .pipe(gulpif(development, sourcemaps.init()))
+    .pipe(sass({ outputStyle: production ? 'compressed' : 'expanded' }))
+    .pipe(gulpif(development, sourcemaps.write()))
     .pipe(autoprefixer('last 5 versions'))
-    .pipe(notify('💥 SASS compiled!'))
-    .pipe(gulp.dest('css'))
+    .pipe(concat('main.css'))
+    .pipe(gulp.dest(`assets/css`))
+    .pipe(notify({ message: `💥  SASS compiled (${production ? 'production' : 'development'})`, onLast: true }))
 })
+
+gulp.task('watch', () => {
+  gulp.watch(images, gulp.parallel('images'))
+  gulp.watch(scripts, gulp.parallel('scripts'))
+  gulp.watch(styles, gulp.parallel('styles'))
+})
+
+gulp.task('build', gulp.series('images', 'scripts', 'styles'))
