@@ -42,7 +42,11 @@ gulp.task('images', () => {
 gulp.task('scripts', () => {
   return gulp
     .src(scripts)
-    .pipe(babel())
+    .pipe(
+      babel({
+        presets: ['@babel/env']
+      })
+    )
     .pipe(concat('main.js'))
     .pipe(uglify({ mangle: { reserved: ['EXAMPLE'] } }))
     .pipe(gulp.dest(`assets/js`))
