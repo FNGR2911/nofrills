@@ -24,6 +24,6 @@ This is really just a boilerplate so it'll look ugly! ;)
 - Go to your template folder and run `npm install` or `yarn install`
 - Go and start building your theme 😃
 
-### LICENSE
+### License
 
 MIT
