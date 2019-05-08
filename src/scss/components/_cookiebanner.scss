@@ -1,0 +1,48 @@
+#cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-size: 14px;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+  display: none;
+
+  @include breakpoint('xs') {
+    bottom: 20px;
+    right: 20px;
+    left: auto;
+    max-width: 390px;
+  }
+
+  h2 {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 0.5em 0 1em 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .button {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    padding: 8px;
+    display: block;
+    cursor: pointer;
+  }
+}
