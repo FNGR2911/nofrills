@@ -1,11 +1,11 @@
 {
   "name": "nofrills",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "nofrills drupal theme package json",
   "main": "index.html",
   "scripts": {
-    "dev": "rm -rf assets && gulp build && gulp watch --prod=false",
-    "build": "rm -rf assets && gulp build --prod=true"
+    "dev": "webpack --config config/webpack.dev.js --watch --progress",
+    "build": "webpack --config config/webpack.prod.js"
   },
   "author": "Matthias Fänger <matthias.faenger@muuuh.de> (https://www.muuuh.de/)",
   "engines": {
@@ -13,22 +13,33 @@
     "npm": ">=6.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.2",
-    "@babel/preset-env": "^7.4.3",
-    "babel-cli": "^6.26.0",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^5.0.3",
-    "gulp-newer": "^1.4.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
-    "yargs": "^13.2.2"
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^3.0.0",
+    "cssnano": "^4.1.10",
+    "file-loader": "^4.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^0.7.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.22.3",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-merge": "^4.2.1",
+    "yargs": "^13.2.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "sanitize.css": "^10.0.0"
+  },
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 9"
+  ]
 }

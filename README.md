@@ -1,16 +1,15 @@
 # nofrills – clean Drupal 8 theme boilerplate
 
-nofrills is a clean Drupal 8 starter theme or boilerplate with Gulp, SASS (Autoprefixer), Babel (ES6), Uglify, Imagemin and more.
+nofrills is a clean Drupal 8 starter theme or boilerplate with Webpack, SASS (Autoprefixer), Babel (ES6), Uglify, Imagemin and more.
 
 This is really just a boilerplate so it'll look ugly! ;)
 
 ### Features
 
-- Base theme is classy so you get nice classes in your HTML
+- Base theme is stable so you have bare minimum of classes and wrapping divs in your HTML
 - Basic template files are included to be easily overwritten
-- Gulp to run and watch SASS (Autoprefixer), JS (Babel) and images (imagemin with newer)
-- Gulp notifier for nice success and error messages
-- normalize.css from classy theme
+- Webpack to transform and watch SASS (Autoprefixer), JS (Babel) and images (imagemin)
+- sanitize.css to make css development for different browsers easier
 
 ### Requirements
 
