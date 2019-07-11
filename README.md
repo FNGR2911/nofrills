@@ -15,7 +15,6 @@ This is really just a boilerplate so it'll look ugly! ;)
 
 - Node
 - NPM or Yarn
-- Gulp
 
 ### Installation
 
