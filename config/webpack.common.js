@@ -66,17 +66,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/bundle.css'
     }),
-    new CopyPlugin([
-      {
-        context: 'src',
-        from: 'images/**/*'
-      },
-      {
-        context: 'src',
-        from: 'fonts/**/*',
-        test: /\.(woff|woff2|ttf|otf|eot)$/
-      }
-    ]),
+    new CopyPlugin({
+      patterns: [
+      { context: 'src', from: 'images/**/*.+(jpg|jpeg|png|gif|svg)' },
+      { context: 'src', from: 'fonts/*.+(woff|woff2|otf|eot|svg)' }
+    ]}),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
       plugins: [imageminMozjpeg({ quality: 80, progressive: true })]
