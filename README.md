@@ -1,6 +1,6 @@
 # nofrills
 
-nofrills is a clean **Drupal 8 starter theme** (or boilerplate) with Webpack, SASS (Autoprefixer), Babel (ES6), Uglify, Imagemin and more.
+nofrills is a clean **Drupal 8/9 starter theme** (or boilerplate) with Webpack, SASS (Autoprefixer), Babel (ES6), Uglify, Imagemin and more.
 
 ### Features
 
