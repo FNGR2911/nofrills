@@ -4,8 +4,8 @@
   "description": "nofrills drupal theme package json",
   "main": "index.html",
   "scripts": {
-    "dev": "webpack --config config/webpack.dev.js --watch --progress",
-    "build": "webpack --config config/webpack.prod.js"
+    "dev": "NODE_ENV=development webpack --config config/webpack.dev.js --watch --progress",
+    "build": "NODE_ENV=production webpack --config config/webpack.prod.js"
   },
   "author": "Matthias Fänger <matthias.faenger@muuuh.de> (https://www.muuuh.de/)",
   "engines": {
@@ -25,6 +25,7 @@
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^1.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss": "^8.1.1",
     "postcss-loader": "^4.0.4",
     "sass": "^1.27.0",
