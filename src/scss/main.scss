@@ -1,5 +1,5 @@
-@import '../../node_modules/sanitize.css/sanitize.css';
-@import '../../node_modules/sanitize.css/typography.css';
-@import '../../node_modules/sanitize.css/forms.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @import '_config/index';
