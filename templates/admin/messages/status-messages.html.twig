@@ -1,0 +1,25 @@
+<div data-drupal-messages class="admin__messages messages">
+{% block messages %}
+{% for type, messages in message_list %}
+  {%
+    set classes = [
+      'messages__list',
+      'messages__list--' ~ type,
+    ]
+  %}
+  <ul role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}{{ type == 'error' ? ' role="alert"'}}>
+    {% if status_headings[type] %}
+      <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+    {% endif %}
+    {% if messages|length > 1 %}
+      {% for message in messages %}
+        <li class="messages__item">{{ message }}</li>
+      {% endfor %}
+    {% else %}
+      <li class="messages__item">{{ messages|first }}</li>
+    {% endif %}
+  </ul>
+  {% set attributes = attributes.removeClass(classes) %}
+{% endfor %}
+{% endblock messages %}
+</div>

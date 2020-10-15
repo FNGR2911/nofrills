@@ -1,0 +1,7 @@
+{% 
+  set classes = [
+    'tabs__item',
+    is_active ? 'tabs__item--active'
+  ]
+%}
+<li{{ attributes.addClass(classes) }}>{{ link }}</li>
