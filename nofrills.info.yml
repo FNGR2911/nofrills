@@ -3,11 +3,16 @@ type: theme
 description: Clean starter theme with nofrills for D8
 core_version_requirement: ^8.8 || ^9
 base theme: stable
+
 libraries:
   - nofrills/global-styling
+
 regions:
   header: Header
   content: Content
   boilerplate: Boilerplate
   footer: Footer
   hidden: Hidden
+
+ckeditor_stylesheets:
+  - assets/css/bundle.css
