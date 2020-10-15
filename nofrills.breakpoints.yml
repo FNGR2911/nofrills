@@ -23,7 +23,7 @@ nofrills.lg:
   multipliers:
     - 1x
 nofrills.xl:
-  label: LG
+  label: XL
   mediaQuery: 'all and (min-width: 1280px)'
   weight: 4
   multipliers:
