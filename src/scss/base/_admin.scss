@@ -110,4 +110,42 @@
       }
     }
   }
+
+  // Login and password reset form
+  &__form {
+    @apply mb-32;
+
+    .form-item {
+      @apply flex flex-row flex-wrap mb-6 items-center sm:mb-8;
+    }
+
+    label {
+      @apply font-sans font-semibold text-gray-700 mr-6;
+      flex: 0 1 128px;
+    }
+
+    input[type='text'],
+    input[type='password'],
+    input[type='mail'] {
+      @apply bg-gray-200 py-4 px-6 border-2 border-gray-200 rounded-3xl flex-1 leading-tight text-gray-600 focus:outline-none focus:bg-gray-100 focus:border-gray-300;
+    }
+
+    .description {
+      @apply text-sm text-gray-500 w-full;
+    }
+
+    .description,
+    .form-actions {
+      margin-left: 144px;
+    }
+
+    .button {
+      @apply py-4 px-6 rounded-3xl bg-gray-700 text-gray-100 cursor-pointer font-semibold transition-colors duration-200 hover:bg-gray-600;
+    }
+
+    // Hint on password reset page
+    &.user-pass p {
+      @apply text-sm text-gray-500 w-full mb-8;
+    }
+  }
 }
