@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_form_alter().
  */
