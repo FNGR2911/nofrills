@@ -1,0 +1,30 @@
+nofrills.xs:
+  label: XS
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+nofrills.sm:
+  label: SM
+  mediaQuery: 'all and (min-width: 640px)'
+  weight: 1
+  multipliers:
+    - 1x
+nofrills.md:
+  label: MD
+  mediaQuery: 'all and (min-width: 768px)'
+  weight: 2
+  multipliers:
+    - 1x
+nofrills.lg:
+  label: LG
+  mediaQuery: 'all and (min-width: 1024px)'
+  weight: 3
+  multipliers:
+    - 1x
+nofrills.xl:
+  label: LG
+  mediaQuery: 'all and (min-width: 1280px)'
+  weight: 4
+  multipliers:
+    - 1x
