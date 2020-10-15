@@ -3,7 +3,7 @@
 /**
  * Implements hook_form_alter().
  */
-function hwl_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function nofrills_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     // Add wrapper css classes to some forms
     if ($form_id == 'user_login_form' || $form_id == 'user_pass') {
         $form['#attributes']['class'][] = 'admin__form';
