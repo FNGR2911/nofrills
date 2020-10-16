@@ -1,22 +1,30 @@
-// COLORS
-$color-primary: #bada55;
+:root {
+  /**
+   * Colors
+   */
+  --color-black: hsl(0, 0%, 0%);
+  --color-gray-dark: hsla(200, 3%, 35%, 1);
+  --color-gray-light: hsla(0, 0%, 86%, 1);
+  --color-gray-rlight: hsla(0, 0%, 92%, 1);
+  --color-white: hsla(0, 0%, 100%, 1);
 
-$color-secondary: #28b3bf;
+  --color-primary: hsla(320, 100%, 40%, 1);
+  --color-secondary: hsla(60, 100%, 40%, 1);
 
-$color-gray: #9b9b9b;
-$color-gray-light: #e9e9e9;
-$color-gray-dark: #4a4a4a;
+  /**
+   * Typo sizes & families
+   */
+  --typo-size-small: 0.875rem; // 14px
+  --typo-size-base: 1; // 16px
+  --typo-size-medium: 1.25rem; // 20px
+  --typo-size-large: 1.5rem; // 24px
+  --typo-size-xlarge: 1.75rem; // 28px
+  --typo-size-2xlarge: 2rem; // 32px
+  --typo-size-3xlarge: 2.5rem; // 40px
+  --typo-size-4xlarge: 3.25rem; // 52px
 
-// TYPO
-// Typo families
-$typo-family-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-  'Helvetica Neue', sans-serif;
-$typo-family-headline: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-
-// Typo sizes
-$typo-size-small: 0.857142857rem; // 12px
-$typo-size-base: 1rem; // 14px
-$typo-size-mid: 1.285714286rem; // 18px
-$typo-size-medium: 1.428571429rem; // 20px
-$typo-size-large: 1.714285714rem; // 24px
-$typo-size-xlarge: 2.571428571rem; // 36px
+  --typo-family-default: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
+  --typo-family-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
+}

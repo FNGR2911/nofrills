@@ -2,7 +2,7 @@
 .admin {
   // Tabs
   &__tabs {
-    @apply inline-flex sm:flex-row list-none p-2 m-0 mb-6 bg-gray-200 rounded-full font-sans uppercase w-auto leading-none;
+    @apply inline-flex sm:flex-row list-none p-1 m-0 mb-6 bg-gray-200 rounded-full font-sans uppercase w-auto leading-none;
     font-size: 11px;
 
     .tabs__item {
@@ -11,7 +11,7 @@
       }
 
       a {
-        @apply flex flex-row items-center py-2 px-4 rounded-full text-gray-500 transition-colors duration-200;
+        @apply flex flex-row items-center py-2 px-3 rounded-full text-gray-500 transition-colors duration-200;
 
         &[data-drupal-link-system-path]::before {
           @apply block mr-2;
@@ -61,7 +61,7 @@
   // Status messages
   &__messages {
     .messages__list {
-      @apply list-none m-0 mb-6 p-2 flex flex-col bg-gray-200 rounded-3xl font-sans;
+      @apply list-none m-0 mb-6 p-2 flex flex-col bg-gray-200 rounded-2xl font-sans;
       font-size: 16px;
 
       &--status {
@@ -116,7 +116,7 @@
     @apply mb-32;
 
     .form-item {
-      @apply flex flex-row flex-wrap mb-6 items-center sm:mb-8;
+      @apply flex flex-row flex-wrap mb-4 items-center sm:mb-6;
     }
 
     label {
@@ -127,7 +127,7 @@
     input[type='text'],
     input[type='password'],
     input[type='mail'] {
-      @apply bg-gray-200 py-4 px-6 border-2 border-gray-200 rounded-3xl flex-1 leading-tight text-gray-600 focus:outline-none focus:bg-gray-100 focus:border-gray-300;
+      @apply bg-gray-200 py-3 px-4 border-2 border-gray-200 text-sm rounded-2xl flex-1 leading-tight text-gray-600 focus:outline-none focus:bg-gray-100 focus:border-gray-300;
     }
 
     .description {
@@ -136,11 +136,11 @@
 
     .description,
     .form-actions {
-      margin-left: 144px;
+      margin-left: 158px;
     }
 
     .button {
-      @apply py-4 px-6 rounded-3xl bg-gray-700 text-gray-100 cursor-pointer font-semibold transition-colors duration-200 hover:bg-gray-600;
+      @apply py-3 px-4 rounded-2xl bg-gray-700 text-gray-100 cursor-pointer font-semibold transition-colors duration-200 hover:opacity-75;
     }
 
     // Hint on password reset page
