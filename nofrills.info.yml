@@ -8,6 +8,7 @@ libraries:
   - nofrills/global-styling
 
 regions:
+  navbar: Navbar
   header: Header
   content: Content
   boilerplate: Boilerplate

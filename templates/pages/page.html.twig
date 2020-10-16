@@ -1,0 +1,33 @@
+{% if page.navbar %}
+<div class="navbar">
+  {{ page.navbar }}
+</div>
+{% endif %}
+
+{% if page.header %}
+<header class="header" role="banner">
+  {{ page.header }}
+</header>
+{% endif %}
+
+<main class="main" role="main">
+  <a id="main-content" tabindex="-1"></a>
+  
+  {% if page.content %}
+  <div class="main__content">
+    {{ page.content }}
+  </div>
+  {% endif %}
+</main>
+
+{% if page.boilerplate %}
+<div class="boilerplate" role="contentinfo">
+  {{ page.boilerplate }}
+</div>
+{% endif %}
+
+{% if page.footer %}
+<footer class="footer" role="contentinfo">
+  {{ page.footer }}
+</footer>
+{% endif %}

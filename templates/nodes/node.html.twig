@@ -1,0 +1,19 @@
+{%
+  set articles_classes = [
+    'node',
+    'node--' ~ node.bundle|clean_class,
+    not node.isPublished() ? '--unpublished',
+    view_mode ? '--view-mode--' ~ view_mode|clean_class,
+  ]
+%}
+{%
+  set content_classes = [
+    'node__content',
+  ]
+%}
+
+<article{{ attributes.addClass(articles_classes) }}>
+  <div{{ content_attributes.addClass(content_classes) }}>
+    {{ content }}
+  </div>
+</article>
