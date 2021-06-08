@@ -1,9 +1,11 @@
 module.exports = {
-  plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
-    require('cssnano')({
+  parser: 'postcss-scss',
+  plugins: {
+    'postcss-import': {},
+    tailwindcss: {},
+    autoprefixer: {},
+    cssnano: {
       preset: 'default',
-    }),
-  ],
+    },
+  },
 }

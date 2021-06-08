@@ -1,12 +1,12 @@
 module.exports = {
-  purge: ['./templates/**/*.twig'],
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-    defaultLineHeights: true,
-    standardFontWeights: true,
+  mode: 'jit',
+  purge: ['./templates/**/*.twig', './src/js/**/*.js', './components/**/*.twig'],
+  darkMode: false,
+  theme: {
+    extend: {},
   },
-  experimental: {
-    applyComplexClasses: true,
+  variants: {
+    extend: {},
   },
+  plugins: [],
 }

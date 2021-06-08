@@ -4,8 +4,13 @@
   "description": "nofrills drupal theme package json",
   "main": "index.html",
   "scripts": {
-    "dev": "NODE_ENV=development webpack --config config/webpack.dev.js --watch --progress",
-    "build": "NODE_ENV=production webpack --config config/webpack.prod.js"
+    "cleanup": "rm -rf ./assets",
+    "css:watch": "NODE_ENV=development postcss -w src/scss/main.scss -o assets/css/bundle.css --no-map --verbose",
+    "css:build": "NODE_ENV=production postcss src/scss/main.scss -o assets/css/bundle.css --no-map --verbose",
+    "webpack:watch": "webpack --config config/webpack.dev.js --watch",
+    "webpack:build": "NODE_ENV=production webpack --config config/webpack.prod.js",
+    "dev": "concurrently \"npm run css:watch\" \"npm run webpack:watch\"",
+    "build": "npm run cleanup && npm run css:build && npm run webpack:build"
   },
   "author": "Matthias Fänger <matthias.faenger@muuuh.de> (https://www.muuuh.de/)",
   "engines": {
@@ -13,30 +18,28 @@
     "npm": ">=6.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
-    "autoprefixer": "^10.0.1",
-    "babel-loader": "^8.1.0",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "autoprefixer": "^10.2.6",
+    "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.2.1",
-    "css-loader": "^5.0.0",
-    "cssnano": "^4.1.10",
-    "file-loader": "^6.1.1",
+    "concurrently": "^6.2.0",
+    "copy-webpack-plugin": "^9.0.0",
+    "cssnano": "^5.0.5",
+    "file-loader": "^6.2.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
-    "mini-css-extract-plugin": "^1.0.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
-    "postcss": "^8.1.1",
-    "postcss-loader": "^4.0.4",
-    "sass": "^1.27.0",
-    "sass-loader": "^10.0.3",
-    "webpack": "^5.1.2",
-    "webpack-cli": "^4.0.0",
-    "webpack-merge": "^5.2.0",
-    "yargs": "^16.1.0"
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.0",
+    "postcss-import": "^14.0.2",
+    "postcss-loader": "^5.3.0",
+    "postcss-scss": "^3.0.5",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "tailwindcss": "^1.9.2"
+    "tailwindcss": "^2.1.4"
   },
   "browserslist": [
     ">1%",
