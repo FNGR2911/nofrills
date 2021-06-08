@@ -1,15 +1,1 @@
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--' ~ paragraph.bundle|clean_class,
-    view_mode ? '--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? '--unpublished'
-  ]
-%}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+{{ content }}
