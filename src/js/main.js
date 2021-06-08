@@ -1,7 +1,5 @@
 'use strict'
 
-import '../scss/main.scss'
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   console.log('Webpack is working fine')
 })

@@ -13,6 +13,7 @@ regions:
   content: Content
   boilerplate: Boilerplate
   footer: Footer
+  grid: Grid
   hidden: Hidden
 
 ckeditor_stylesheets:

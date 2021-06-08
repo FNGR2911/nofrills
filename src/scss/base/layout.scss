@@ -1,0 +1,21 @@
+.container {
+  @apply ml-auto mr-auto px-gap;
+  width: 100vw;
+  max-width: calc(var(--layout-max-width) + calc(var(--grid-gap) * 2));
+
+  @screen md {
+    max-width: calc(var(--layout-max-width) + calc(var(--grid-gap) * 2));
+  }
+
+  &.--fluid {
+    @apply max-w-none md:max-w-none;
+  }
+}
+
+.c-grid {
+  @apply -mx-gap flex flex-wrap;
+}
+
+.c-column {
+  @apply px-gap relative;
+}

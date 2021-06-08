@@ -1,0 +1,71 @@
+:root {
+  /**
+   * Grid
+   */
+  --layout-max-width: 750px;
+  --grid-gap: 1rem;
+
+  /**
+   * Colors
+   */
+  --hsl-primary: 320, 100%, 40%;
+  --hsl-secondary: 60, 100%, 40%;
+
+  --hsl-black: 0, 0%, 0%;
+  --hsl-gray-dark: 200, 3%, 35%;
+  --hsl-gray-medium: 20, 7%, 52%;
+  --hsl-gray-light: 0, 0%, 75%;
+  --hsl-white: 0, 0%, 100%;
+
+  --color-black: hsla(var(--hsl-black), 1);
+  --color-gray-dark: hsla(var(--hsl-gray-dark), 1);
+  --color-gray-medium: hsla(var(--hsl-gray-medium), 1);
+  --color-gray-light: hsla(var(--hsl-gray-light), 1);
+  --color-white: hsla(var(--hsl-white), 1);
+
+  --color-primary: hsla(var(--hsl-primary), 1);
+  --color-secondary: hsla(var(--hsl-secondary), 1);
+
+  /**
+   * Typo sizes & families
+   */
+  --typo-size-xsmall: 0.5rem; // 8px
+  --typo-size-small: 0.875rem; // 14px
+  --typo-size-base: 1; // 16px
+  --typo-size-medium: 1.25rem; // 20px
+  --typo-size-large: 1.5rem; // 24px
+  --typo-size-xlarge: 1.75rem; // 28px
+
+  --typo-family-default: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
+  --typo-family-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
+
+  /**
+   * Spacing
+   */
+  --spacing-xsmall: 0.375rem; // 6px
+  --spacing-small: 1rem; // 16px
+  --spacing-base: 2rem; // 32px
+  --spacing-medium: 4rem; // 64px
+  --spacing-large: 6rem; // 96px
+  --spacing-xlarge: 8rem; // 128px
+}
+
+@screen sm {
+}
+
+@screen md {
+}
+
+@screen lg {
+  :root {
+    --layout-max-width: 992px;
+  }
+}
+
+@screen xl {
+  :root {
+    --layout-max-width: 1248px;
+  }
+}
