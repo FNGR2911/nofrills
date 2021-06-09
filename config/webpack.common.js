@@ -39,7 +39,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
         { context: 'src', from: 'images/**/*.+(jpg|jpeg|png|gif|svg)' },
