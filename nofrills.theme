@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -19,5 +20,23 @@ function nofrills_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
     if ($form_id == 'user_pass') {
         $form['name']['#attributes']['placeholder'] = t('email@domain.com');
+    }
+}
+
+function nofrills_theme_suggestions_form_alter(&$suggestions, &$variables)
+{
+    $suggestions[] = 'form__' . str_replace('-', '_', $variables['element']['#id']);
+}
+
+function nofrills_theme_suggestions_form_element_alter(&$suggestions, $variables)
+{
+    if (isset($variables['element']['#name'])) {
+        $name = Html::cleanCssIdentifier($variables['element']['#name']);
+        $suggestions[] = str_replace('-', '_', "form-element--{$name}");
+    }
+
+    if (isset($variables['element']['#attributes']['type'])) {
+        $type = Html::cleanCssIdentifier($variables['element']['#attributes']['type']);
+        $suggestions[] = str_replace('-', '_', "form-element--{$type}");
     }
 }

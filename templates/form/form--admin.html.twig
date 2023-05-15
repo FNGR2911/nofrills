@@ -1,0 +1,19 @@
+{#
+/**
+  * @file
+  * Theme override for a 'form' element.
+  *
+  * Available variables
+  * - attributes: A list of HTML attributes for the wrapper element.
+  * - children: The child elements of the form.
+  *
+  * @see template_preprocess_form()
+  */
+#}
+<div class="admin__form__wrapper container">
+{{ headline|raw }}
+{{ links|raw }}
+<form{{ attributes.addClass('form mt-sm') }}>
+  {{ children }}
+</form> 
+</div>  

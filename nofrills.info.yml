@@ -1,8 +1,8 @@
 name: nofrills
 type: theme
 description: Clean starter theme with nofrills for D8
-core_version_requirement: ^8.8 || ^9
-base theme: stable
+core_version_requirement: ^8.8 || ^9 || ^10
+base theme: stable9
 
 libraries:
   - nofrills/global-styling

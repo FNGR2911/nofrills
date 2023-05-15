@@ -1,21 +1,14 @@
-.container {
-  @apply ml-auto mr-auto px-gap;
-  width: 100vw;
-  max-width: calc(var(--layout-max-width) + calc(var(--grid-gap) * 2));
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-  @screen md {
-    max-width: calc(var(--layout-max-width) + calc(var(--grid-gap) * 2));
+  &__wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: var(--page-max-width);
+    margin: 0 auto;
   }
-
-  &.--fluid {
-    @apply max-w-none md:max-w-none;
-  }
-}
-
-.c-grid {
-  @apply -mx-gap flex flex-wrap;
-}
-
-.c-column {
-  @apply px-gap relative;
 }

@@ -113,7 +113,7 @@
 
   // Login and password reset form
   &__form {
-    @apply mb-32;
+    @apply mb-32 container;
 
     .form-item {
       @apply flex flex-row flex-wrap mb-4 items-center sm:mb-6;
@@ -121,7 +121,7 @@
 
     label {
       @apply font-sans font-semibold text-gray-700 mr-6;
-      flex: 0 1 88px;
+      flex: 0 1 100%;
     }
 
     input[type='text'],
@@ -132,11 +132,6 @@
 
     .description {
       @apply text-sm text-gray-500 w-full;
-    }
-
-    .description,
-    .form-actions {
-      margin-left: 114px;
     }
 
     .button {
